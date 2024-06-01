@@ -11,8 +11,7 @@ logging.basicConfig(level=logging.INFO)
 async def main():
 	from handlers import start
 
-	session = AiohttpSession(proxy=config.PROXY)
-	bot = Bot(token=config.TOKEN, session=session)
+	bot = Bot(token=config.TOKEN)
 
 	dispatcher = Dispatcher()
 	dispatcher.include_router(start.router)
